@@ -7,13 +7,17 @@ Para a execução do projeto foi escolhido o Airflow como orquestrador de tarefa
 - PBIX na pasta raíz
 - Consultas SQL utilizadas para a criação das tabelas e processamento entre raw e camada de utilização em /dags/tmdb_pipeline/sql_queries/
 
-## Premissas
+## Requisitos
 - Para a execução é necessário ter uma conta na origem dos dados para a criação da chave da API.
 - Necessário ter um ambiente Airflow e o PowerBI desktop instalado.
 - É necessário para o armazenamento ter uma conta no GCP e acesso de criação de datasets e manipulador de dados no BigQuery.
 - Necessário ter um service account com os privilégios acima e ter este configurado como a connection default a ser utilizada no Airflow para acessos aos serviços GCP.
 - Necessário definir uma variável do ambiente Airflow com o nome KEY_TMDB_API e valor igual a chave da API do TMDB.
 - configurar a pasta de trabalho do airflow como sendo a pasta /dags
+
+## Premissas
+- Para a questão 2 foi considerado o histórico de 10 anos dos produtores que estão presentes em filmes em cartaz. O mesmo válido para a questão 3, porém com o histórico dos últimos 20 anos.
+- Para a questão 4 foi considerado a contagem de todos os filmes dos gêneros presentes na listagem disponibilizada pela API em /movies/list nos últimos 5 anos.
 
 ## Execução
 1. Criar as tabelas no GCP utilizando a query create_tables.sql
